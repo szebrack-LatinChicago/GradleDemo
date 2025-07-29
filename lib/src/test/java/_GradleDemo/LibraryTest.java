@@ -32,8 +32,39 @@ class LibraryTest {
 
         String expectedOutput = "zebrack";
         String input = outContent.toString().toLowerCase();
+        
+        String found = input;
         if(input.indexOf(expectedOutput) != -1) {
-        	input = "zebrack";
+        	found = "zebrack";
+        }
+        assertEquals(expectedOutput,found);
+        
+        expectedOutput = "happy";
+        found = input;
+        if(input.indexOf(expectedOutput) != -1) {
+        	found = "happy";
+        }
+        assertEquals(expectedOutput,found);
+        
+        
+        expectedOutput = "birthday";
+        found = input;
+        if(input.indexOf(expectedOutput) != -1) {
+        	found = "birthday";
+        }
+        assertEquals(expectedOutput,found);
+        
+    }
+    @Test void testTen() {
+    	ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        Library.main(null);
+
+        String expectedOutput = "10";
+        String input = outContent.toString().toLowerCase();
+        if(input.indexOf(expectedOutput) != -1) {
+        	input = "10";
         }
 
         assertEquals(expectedOutput,input);
